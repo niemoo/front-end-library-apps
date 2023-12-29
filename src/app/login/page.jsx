@@ -1,9 +1,12 @@
 'use client';
 import LoginCard from '@/components/LoginCard';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 const Login = () => {
+  const router = useRouter();
+
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const [data, setData] = useState();
@@ -37,6 +40,7 @@ const Login = () => {
   useEffect(() => {
     if (data) {
       alert(data?.payload.message);
+      router.push('/userslists');
     }
 
     if (error) {

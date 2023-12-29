@@ -1,6 +1,6 @@
 const SignUpCard = ({ onSubmit, onEmailChange, onUsernameChange, onNameChange, onPasswordChange, isLoading }) => {
   return (
-    <form className="bg-neutral-900 w-80 mx-auto mt-40 p-5 rounded-lg border border-gray-800" onSubmit={onSubmit}>
+    <form className="bg-neutral-900 w-80 mx-auto mt-40 p-5 rounded-lg border border-gray-800 bg-gray-800 shadow-2xl" onSubmit={onSubmit}>
       <h1 className="text-2xl font-semibold text-white text-center mb-2">Sign Up</h1>
       <hr className="mb-5 w-1/2 mx-auto" />
 

@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="p-4 bg-neutral-900">
+    <nav className="p-4 bg-blue-gray-900">
       <div className="flex items-center justify-between flex-wrap max-w-screen-xl mx-auto">
         <div className="flex items-center flex-shrink-0 text-white mr-6 lg:mr-72">{/* <img src={locofy} className="w-100 h-10 mr-2" alt="Logo" /> */}</div>
         <div className="block lg:hidden">
@@ -22,7 +22,7 @@ const Navbar = () => {
         </div>
         <div className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${isOpen ? 'block' : 'hidden'}`}>
           <div className="text-sm lg:flex-grow">
-            <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white mr-4 hover:text-emerald-500">
+            <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white mr-4 hover:text-teal-400">
               Home
             </Link>
             <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white mr-4">
