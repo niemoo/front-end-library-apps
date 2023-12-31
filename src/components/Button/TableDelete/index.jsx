@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Dialog, DialogHeader, DialogBody, DialogFooter } from '@material-tailwind/react';
+import { MdDeleteForever } from 'react-icons/md';
 import axios from 'axios';
 
 const TableDelete = ({ userID }) => {
@@ -18,8 +19,8 @@ const TableDelete = ({ userID }) => {
 
   return (
     <>
-      <Button onClick={handleOpen} variant="gradient">
-        Open Dialog
+      <Button onClick={handleOpen} className="bg-red-500 hover:bg-red-900 py-2 px-5">
+        <MdDeleteForever className="text-xl" />
       </Button>
       <Dialog open={open} handler={handleOpen}>
         <DialogHeader>Delete User Data</DialogHeader>

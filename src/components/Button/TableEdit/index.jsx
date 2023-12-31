@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Button, Dialog, Card, CardBody, CardFooter, Typography } from '@material-tailwind/react';
 import { FaUserEdit } from 'react-icons/fa';
 
-const TableEdit = ({ oldEmail, oldUsername, oldName, oldPassword, userID, onUpdateTable }) => {
+const TableEdit = ({ oldEmail, oldUsername, oldName, oldPassword, userID }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
 
@@ -35,10 +35,6 @@ const TableEdit = ({ oldEmail, oldUsername, oldName, oldPassword, userID, onUpda
       const res = await axios.put('http://localhost:3300/users/update', { email: newEmail || oldEmail, username: newUsername || oldUsername, name: newName || oldName, password: newPassword || oldPassword, users_id: userID });
 
       window.location.reload();
-      //   if (res.data.payload.status_code === 200) {
-      //     // Update successful, trigger a re-fetch of user data by calling the callback
-      //     onUpdateTable();
-      //   }
     } catch (err) {
       console.error(`Error : ${err}`);
     }
@@ -46,8 +42,8 @@ const TableEdit = ({ oldEmail, oldUsername, oldName, oldPassword, userID, onUpda
 
   return (
     <>
-      <Button onClick={handleOpen} className="bg-red-500">
-        <FaUserEdit />
+      <Button onClick={handleOpen} className="bg-blue-500 hover:bg-blue-900 py-2 px-5">
+        <FaUserEdit className="text-xl" />
       </Button>
       <Dialog size="xs" open={open} handler={handleOpen} className="bg-transparent shadow-none">
         <Card className="mx-auto w-full max-w-[24rem]">
@@ -55,9 +51,6 @@ const TableEdit = ({ oldEmail, oldUsername, oldName, oldPassword, userID, onUpda
             <Typography variant="h4" color="blue-gray">
               Update User Data
             </Typography>
-            {/* <Typography className="mb-3 font-normal" variant="paragraph" color="gray">
-              Enter your email and password to Sign In.
-            </Typography> */}
             <Typography className="-mb-2" variant="h6">
               Email
             </Typography>

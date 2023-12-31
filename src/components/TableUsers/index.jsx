@@ -21,11 +21,6 @@ const TableUsers = () => {
     fetchUsers();
   }, []);
 
-  const handleUpdateTable = () => {
-    // Function to re-fetch user data and update the table
-    fetchUsers();
-  };
-
   return (
     <table className="text-white md:table-auto table-fixed border-collapse border-spacing-2 border border-white">
       <thead>
@@ -42,8 +37,8 @@ const TableUsers = () => {
             <th className="w-56 text-left border p-1">{user.email}</th>
             <th className="w-44 text-left border p-1">{user.username}</th>
             <th className="w-44 text-left border p-1">{user.name}</th>
-            <th className="w-44 text-left border p-1">
-              <TableEdit oldEmail={user.email} oldUsername={user.username} oldName={user.name} oldPassword={user.password} userID={user.users_id} onUpdateTable={handleUpdateTable} />
+            <th className="w-44 text-left border p-1 flex items-center justify-center gap-3">
+              <TableEdit oldEmail={user.email} oldUsername={user.username} oldName={user.name} oldPassword={user.password} userID={user.users_id} />
               <TableDelete userID={user.users_id} />
             </th>
           </tr>
